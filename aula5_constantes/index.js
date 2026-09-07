@@ -9,3 +9,5 @@
 
 const nomepai = 'Robson';
 console.log(`${nomepai} nasceu em 1984`);
+
+console.log(typeof nomepai);
