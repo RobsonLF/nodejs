@@ -44,3 +44,15 @@ console.log(contador);
 
 contador += 2; // contador = contador + 2
 console.log(contador);
+
+const num4 = 10;
+const num5 = '5.2';
+
+//casting de string para number
+const num6 = parseInt(num5);
+const num7 = parseFloat(num5);
+const num8 = Number(num5);
+
+console.log(num4 + num6);
+console.log(num4 + num7);
+console.log(num4 + num8);
