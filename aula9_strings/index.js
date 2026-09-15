@@ -12,7 +12,11 @@ console.log(umastring.search(/[a-z]/g));
 
 console.log(outrastring.replace(/r/g, '#'));
 console.log(outrastring.replace(/r/g, '#').toUpperCase());
-*/
+
 console.log(outrastring.length);
 
 console.log(outrastring.slice(2, 6));
+console.log(outrastring.substring(outrastring.length-5, outrastring.length-1));
+*/
+
+console.log(outrastring.split(' ',3));
