@@ -42,9 +42,21 @@
 3. /, *, %
 4. +, -
 
+# Seção 2 - Lógica de Programação
 
+## Operadores de Comparação
 
+* Maior que ---------------------------------------> >
+* Maior que ou igual a ---------------------------> >=
+* menor que --------------------------------------> <
+* menor que ou igual a --------------------------> <=
+* igualdade (compara valor, não se usado) -----> ==
+* igualdade estrita -------------------------------> ===
+* diferença (compara valor, não se usado) ------> !=
+* diferença estrita --------------------------------> !==
 
+## Operadores Lógicos
 
-
-![1789744187589](image/_Anotações/1789744187589.png)
+* && --> AND --> E
+* | |    --> OR    --> OU
+* !     --> NOT  --> NÃO
