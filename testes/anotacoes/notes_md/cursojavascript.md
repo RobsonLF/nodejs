@@ -1,4 +1,9 @@
-# *Curso de JavaScript*
+# JavaScript - Luis Otávio Miranda
+
+Categoria: Desenvolvimento
+
+
+# Curso de JavaScript
 
 # Referencias
 

@@ -1,7 +1,14 @@
 [
     {
-        "arquivo": "cursojavascript.md",
-        "titulo": "JAVASCRIPT",
-        "categoria": "Backend"
-    }    
+        "arquivo": "html.md",
+        "titulo": "HTML",
+        "categoria": "Desenvolvimento Web",
+        "data_modificacao": "2026-09-20"
+    },
+    {
+        "arquivo": "javascript.md",
+        "titulo": "JavaScript",
+        "categoria": "Programação",
+        "data_modificacao": "2026-09-20"
+    }
 ]
