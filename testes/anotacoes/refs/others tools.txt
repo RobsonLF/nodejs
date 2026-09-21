@@ -1,0 +1,37 @@
+Links de portifolios
+https://dribbble.com/shots/10724776-Carlos-Personal-Portfolio-Website
+https://www.behance.net/gallery/185668155/Portifolio-Landing-Page?tracking_source=search_projects%7Cportifolio+website
+https://startbootstrap.com/theme/stylish-portfolio
+https://startbootstrap.com/previews/freelancer
+https://startbootstrap.com/previews/personal
+https://startbootstrap.com/previews/resume
+https://brittanychiang.com/
+https://www.rammaheshwari.com/
+https://tamalsen.dev/
+https://icons.getbootstrap.com/
+
+Dev web
+Ajuda a verificar as dimensões da tela
+Windows resizer --> dentro do chrome web store
+
+Planejamento de site
+https://mockflow.com/
+
+Detecção de fonts
+https://www.whatfontis.com/
+https://www.myfonts.com/
+
+fonts Ninjas --> chrome web store
+
+Videos Penpot
+https://www.youtube.com/watch?v=aENG39loL3s
+
+Elementos html e css
+https://uiverse.io/elements?page=2
+
+https://uiverse.io/Cevorob/good-wolverine-51
+
+https://matheuscostadesign.github.io/blog/bibliotecas-ui-para-frontend/
+
+Gradientes
+https://colormind.io/template/paper-dashboard/

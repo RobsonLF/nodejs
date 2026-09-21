@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
-
+    <title>Notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-        <main>
-            <article id="conteudo">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">ANOTAÇÕES</div>
+            <div class="sidebar-rule"></div>
+            <nav class="sidebar-nav" aria-label="Navegação principal">
+                <a class="nav-item active" href="#dashboard"><i class="bi bi-sliders2-vertical"></i><span>DASHBOARD</span></a>
+                <a class="nav-item" href="#perfil"><i class="bi bi-archive"></i><span>NOTAS</span></a>
+                <!--<a class="nav-item" href="#tabela"><i class="bi bi-list-columns-reverse"></i><span>TABLE LIST</span></a>
+                <a class="nav-item" href="#tipografia"><i class="bi bi-type"></i><span>TYPOGRAPHY</span></a>
+                <a class="nav-item" href="#icones"><i class="bi bi-paperclip"></i><span>ICONS</span></a>
+                <a class="nav-item" href="#mapas"><i class="bi bi-map"></i><span>MAPS</span></a>
+                <a class="nav-item" href="#notificacoes"><i class="bi bi-bell"></i><span>NOTIFICATIONS</span></a>
+            -->
+            </nav>
+        </aside>
 
-            </article>
+        <main class="main-content" id="dashboard">
+            <header class="topbar">
+                <button class="menu-toggle" type="button" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
+                <h1>Dashboard</h1>
+                <div class="topbar-actions">
+                    <!--<button type="button" aria-label="Pesquisar"><i class="bi bi-search"></i></button>
+                    <button type="button" aria-label="Notificações"><i class="bi bi-bell"></i></button>
+                -->
+                    <button type="button" aria-label="Perfil"><i class="bi bi-person-circle"></i></button>
+                </div>
+            </header>
+
+            <section class="dashboard-content" aria-label="Resumo do dashboard">
+                <div class="metrics-grid">
+                    <article class="metric-card">
+                        <div class="metric-icon orange"><i class="bi bi-filetype-sql"></i></div>
+                        <div class="metric-copy"><span>Banco de Dados</span><strong>1</strong></div>
+                        <div class="metric-footer"><i class="bi bi-arrow-clockwise"></i> Atualizado</div>
+                    </article>
+                    <article class="metric-card">
+                        <div class="metric-icon green"><i class="bi bi-filetype-js"></i></div>
+                        <div class="metric-copy"><span>Back End</span><strong>2</strong></div>
+                        <div class="metric-footer"><i class="bi bi-arrow-clockwise"></i> Atualizado</div>
+                    </article>
+                    <article class="metric-card">
+                        <div class="metric-icon red"><i class="bi bi-filetype-html"></i></div>
+                        <div class="metric-copy"><span>Front End</span><strong>1</strong></div>
+                        <div class="metric-footer"><i class="bi bi-arrow-clockwise"></i> Atualizado</div>
+                    </article>
+                </div>
+
+
+            </section>
         </main>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
 </body>
 </html>

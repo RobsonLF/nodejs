@@ -1,4 +1,7 @@
 async function carregarArquivos(){
+    const conteudo = document.getElementById("conteudo");
+    if (!conteudo) return;
+
     const resposta = await fetch("data/notes.json");
     const arquivos = await resposta.json();
     
@@ -9,7 +12,7 @@ async function carregarArquivos(){
         const respostaMarkdown = await fetch(`notes_md/${arquivo.arquivo}`);
         const markdown = await respostaMarkdown.text();
         const html = marked.parse(markdown);
-        document.getElementById("conteudo").innerHTML += html;
+        conteudo.innerHTML += html;
         //console.log(markdown);
     }
     
