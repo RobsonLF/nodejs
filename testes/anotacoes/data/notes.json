@@ -1,14 +1,20 @@
 [
     {
-        "arquivo": "html.md",
-        "titulo": "HTML",
-        "categoria": "Desenvolvimento Web",
-        "data_modificacao": "2026-09-20"
+        "arquivo": "cursohtml.md",
+        "titulo": "HTML - Curso em Video",
+        "categoria": "Desenvolvimento",
+        "data_modificacao": "2026-09-21"
     },
     {
-        "arquivo": "javascript.md",
-        "titulo": "JavaScript",
-        "categoria": "Programação",
-        "data_modificacao": "2026-09-20"
+        "arquivo": "cursojavascript.md",
+        "titulo": "JavaScript - Luis Otávio Miranda",
+        "categoria": "Desenvolvimento",
+        "data_modificacao": "2026-09-21"
+    },
+    {
+        "arquivo": "cursojavascript1.md",
+        "titulo": "JavaScript - Curso em Video",
+        "categoria": "Desenvolvimento",
+        "data_modificacao": "2026-09-21"
     }
 ]

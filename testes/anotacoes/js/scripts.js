@@ -9,7 +9,7 @@ async function carregarArquivos(){
         const respostaMarkdown = await fetch(`notes_md/${arquivo.arquivo}`);
         const markdown = await respostaMarkdown.text();
         const html = marked.parse(markdown);
-        document.getElementById("conteudo").innerHTML = html;
+        document.getElementById("conteudo").innerHTML += html;
         //console.log(markdown);
     }
     

@@ -1,28 +1,128 @@
 from pathlib import Path
+from datetime import datetime
 import json
+import re
 
-# Pasta onde está este arquivo Python
-PASTA_SCRIPT = Path(__file__).resolve().parent
+# ============================================================
+# LOCALIZAÇÃO DAS PASTAS
+# ============================================================
 
-# Pasta principal do projeto
-PASTA_PROJETO = PASTA_SCRIPT.parent
+pasta_script = Path(__file__).resolve().parent
+pasta_projeto = pasta_script.parent
 
-# Caminhos
-PASTA_MARKDOWN = PASTA_PROJETO / "notes_md"
-ARQUIVO_JSON = PASTA_PROJETO / "data" / "notes.json"
+pasta_markdown = pasta_projeto / "notes_md"
+arquivo_json = pasta_projeto / "data" / "notes.json"
 
-# Procura todos os arquivos .md
+# ============================================================
+# FUNÇÃO PARA LER INFORMAÇÕES DO MARKDOWN
+# ============================================================
+
+def obter_informacoes(arquivo):
+    conteudo = arquivo.read_text(encoding="utf-8")
+    # --------------------------------------------
+    # Título
+    # Procura a primeira linha começando com "# "
+    # --------------------------------------------
+    
+    titulo = arquivo.stem
+    for linha in conteudo.splitlines():
+        if linha.startswith("# "):
+            titulo = linha[2:].strip()
+            break
+    # --------------------------------------------
+    # Categoria
+    # Procura:
+    #
+    # Categoria: Programação
+    # --------------------------------------------
+    
+    categoria = "Sem Categoria"
+    resultado = re.search(
+        r"^Categoria:\s*(.+)$",
+        conteudo,
+        re.MULTILINE | re.IGNORECASE
+    )
+    if resultado:
+        categoria = resultado.group(1).strip()
+
+    # --------------------------------------------
+    # Data de modificação
+    # --------------------------------------------
+
+    data_modificacao = datetime.fromtimestamp(
+        arquivo.stat().st_mtime
+    ).strftime("%Y-%m-%d")
+
+    # --------------------------------------------
+    # Retorna os dados
+    # --------------------------------------------
+
+    return{
+        "arquivo": arquivo.name,
+        "titulo": titulo,
+        "categoria": categoria,
+        "data_modificacao": data_modificacao
+    }
+
+# ============================================================
+# ENCONTRA OS ARQUIVOS MARKDOWN
+# ============================================================
+
 arquivos = sorted(
-    arquivo.name
-    for arquivo in PASTA_MARKDOWN.glob("*.md")
+    pasta_markdown.glob("*.md"),
+    key=lambda arquivo: arquivo.name.lower()
 )
 
-# Cria a pasta data caso ela não exista
-ARQUIVO_JSON.parent.mkdir(parents=True, exist_ok=True)
+# ============================================================
+# CRIA OS DADOS DO JSON
+# ============================================================
 
-# Atualiza o JSON
-with open(ARQUIVO_JSON, "w", encoding="utf-8") as arquivo:
-    json.dump(arquivos, arquivo, ensure_ascii=False, indent=2)
+notas = []
 
-print(f"{len(arquivos)} arquivos encontrados.")
-print(f"JSON atualizado: {ARQUIVO_JSON}")
+for arquivo in arquivos:
+    informacoes = obter_informacoes(arquivo)
+    notas.append(informacoes)
+
+# ============================================================
+# CRIA A PASTA DATA
+# ============================================================
+
+arquivo_json.parent.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+# ============================================================
+# SALVA O JSON
+# ============================================================
+
+with open(
+    arquivo_json,
+    "w",
+    encoding="utf-8"
+) as arquivo:
+    json.dump(
+        notas,
+        arquivo,
+        ensure_ascii=False,
+        indent=4
+    )
+# ============================================================
+# RESULTADO
+# ============================================================
+
+print()
+print("=======================================================")
+print("            BANCO DE ANOTAÇÕES ATUALIZADO              ")
+print("=======================================================")
+print()
+print(f"Arquivos encontrados: {len(notas)}")
+print(f"Arquivo JSON: {arquivo_json}")
+print()
+
+for nota in notas:
+    print(
+        f"- {nota['titulo']} "
+        f"({nota['categoria']})"
+    )
+print()
