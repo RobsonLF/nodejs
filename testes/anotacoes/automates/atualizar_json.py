@@ -46,6 +46,29 @@ def obter_informacoes(arquivo):
         categoria = resultado.group(1).strip()
 
     # --------------------------------------------
+    # Texto Breve
+    # --------------------------------------------
+        texto_breve = "Sem Texto"
+        resultado1 = re.search(
+            r"^Texto Breve:\s*(.+$)",
+            conteudo,
+            re.MULTILINE | re.IGNORECASE            
+        )
+        if resultado1:
+            texto_breve = resultado1.group(1).strip()
+    # --------------------------------------------
+    # Plataforma
+    # --------------------------------------------
+        plataforma = "Sem Plataforma"
+        resultado2 = re.search(
+            r"^Plataforma:\s*(.+$)",
+            conteudo,
+            re.MULTILINE | re.IGNORECASE            
+        )
+        if resultado2:
+            plataforma = resultado2.group(1).strip()
+
+    # --------------------------------------------
     # Data de modificação
     # --------------------------------------------
 
@@ -61,7 +84,9 @@ def obter_informacoes(arquivo):
         "arquivo": arquivo.name,
         "titulo": titulo,
         "categoria": categoria,
-        "data_modificacao": data_modificacao
+        "data_modificacao": data_modificacao,
+        "texto_breve": texto_breve,
+        "plataforma":plataforma
     }
 
 # ============================================================
@@ -84,7 +109,7 @@ for arquivo in arquivos:
     notas.append(informacoes)
 
 # ============================================================
-# CRIA A PASTA DATA
+# CRIA A PASTA DATA de notas
 # ============================================================
 
 arquivo_json.parent.mkdir(
@@ -93,7 +118,7 @@ arquivo_json.parent.mkdir(
 )
 
 # ============================================================
-# SALVA O JSON
+# SALVA O JSON de notas
 # ============================================================
 
 with open(
@@ -107,6 +132,10 @@ with open(
         ensure_ascii=False,
         indent=4
     )
+
+
+
+
 # ============================================================
 # RESULTADO
 # ============================================================
@@ -125,4 +154,5 @@ for nota in notas:
         f"- {nota['titulo']} "
         f"({nota['categoria']})"
     )
+    
 print()

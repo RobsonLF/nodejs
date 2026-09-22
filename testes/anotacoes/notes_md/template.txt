@@ -1,0 +1,7 @@
+# Titulo
+
+Categoria: Categoria
+
+Plataforma: Plataforma
+
+Texto Breve: Texto

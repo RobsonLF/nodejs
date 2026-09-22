@@ -4,8 +4,7 @@ Categoria: Desenvolvimento
 
 Plataforma: Curso em Video
 
-Texto Breve: As an anotações apresentam os principais fundamentos de  **HTML5 e CSS3** , abordando estrutura e semântica HTML, títulos, textos, listas, links, imagens, vídeos e áudios, além dos conceitos de Front-end, Back-end, hospedagem e domínio. Também exploram  **CSS** , incluindo cores, harmonia de paletas, tipografia, seletores, pseudo-classes, pseudo-elementos, box model, variáveis CSS, alinhamentos e configurações globais, com referências a ferramentas e recursos úteis para desenvolvimento e planejamento de sites.
-
+Texto Breve: Domine iframes, formulários e design responsivo com projetos práticos
 
 ## HTML5 e CSS3
 

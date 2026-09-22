@@ -2,6 +2,9 @@
 
 Categoria: Desenvolvimento
 
+Plataforma: Udemy
+
+Texto Breve: Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns
 
 # Curso de JavaScript
 

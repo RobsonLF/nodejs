@@ -1,20 +1,42 @@
 [
     {
+        "arquivo": "bancodedados copy.md",
+        "titulo": "Banco de Dados SQL e NoSQL",
+        "categoria": "Banco de dados",
+        "data_modificacao": "2026-09-21",
+        "texto_breve": "Aprenda tudo sobre bancos de dados relacionais e não relacionais: MySQL, PostgreSQL, SQLite, MongoDB, Modelagem de Dados",
+        "plataforma": "Udemy"
+    },
+    {
+        "arquivo": "bancodedados.md",
+        "titulo": "Banco de Dados SQL e NoSQL",
+        "categoria": "Banco de dados",
+        "data_modificacao": "2026-09-21",
+        "texto_breve": "Aprenda tudo sobre bancos de dados relacionais e não relacionais: MySQL, PostgreSQL, SQLite, MongoDB, Modelagem de Dados",
+        "plataforma": "Udemy"
+    },
+    {
         "arquivo": "cursohtml.md",
-        "titulo": "HTML - Curso em Video",
+        "titulo": "HTML",
         "categoria": "Desenvolvimento",
-        "data_modificacao": "2026-09-21"
+        "data_modificacao": "2026-09-21",
+        "texto_breve": "Domine iframes, formulários e design responsivo com projetos práticos",
+        "plataforma": "Curso em Video"
     },
     {
         "arquivo": "cursojavascript.md",
         "titulo": "JavaScript - Luis Otávio Miranda",
         "categoria": "Desenvolvimento",
-        "data_modificacao": "2026-09-21"
+        "data_modificacao": "2026-09-21",
+        "texto_breve": "Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns",
+        "plataforma": "Udemy"
     },
     {
         "arquivo": "cursojavascript1.md",
-        "titulo": "JavaScript - Curso em Video",
+        "titulo": "JavaScript",
         "categoria": "Desenvolvimento",
-        "data_modificacao": "2026-09-21"
+        "data_modificacao": "2026-09-21",
+        "texto_breve": "Aprenda JavaScript do zero e domine a linguagem que move a web",
+        "plataforma": "Curso em Video"
     }
 ]

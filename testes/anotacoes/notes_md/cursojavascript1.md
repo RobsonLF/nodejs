@@ -1,7 +1,10 @@
-# JavaScript - Curso em Video
+# JavaScript
 
 Categoria: Desenvolvimento
 
+Plataforma: Curso em Video
+
+Texto Breve: Aprenda JavaScript do zero e domine a linguagem que move a web
 
 # Anotações Do Curso de *JavaScript*
 
@@ -129,8 +132,8 @@ Categoria: Desenvolvimento
 
 #### Ordem de Precedência
 
-   &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;() 
-   &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** 
+   &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;()
+   &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**
    &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* / %
    &nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ -
    &nbsp;&nbsp;V &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
