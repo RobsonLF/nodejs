@@ -3,7 +3,7 @@
         "arquivo": "bancodedados.md",
         "titulo": "Banco de Dados SQL e NoSQL",
         "categoria": "Banco de dados",
-        "data_modificacao": "2026-09-22",
+        "data_modificacao": "2026-09-21",
         "texto_breve": "Aprenda tudo sobre bancos de dados relacionais e não relacionais: MySQL, PostgreSQL, SQLite, MongoDB, Modelagem de Dados",
         "plataforma": "Udemy"
     },
@@ -11,7 +11,7 @@
         "arquivo": "html.md",
         "titulo": "HTML",
         "categoria": "HTML",
-        "data_modificacao": "2026-09-22",
+        "data_modificacao": "2026-09-21",
         "texto_breve": "Domine iframes, formulários e design responsivo com projetos práticos",
         "plataforma": "Curso em Video"
     },
@@ -19,7 +19,7 @@
         "arquivo": "javascript.md",
         "titulo": "JavaScript - Luis Otávio Miranda",
         "categoria": "JavaScript",
-        "data_modificacao": "2026-09-22",
+        "data_modificacao": "2026-09-21",
         "texto_breve": "Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns",
         "plataforma": "Udemy"
     },
@@ -27,8 +27,16 @@
         "arquivo": "javascript1.md",
         "titulo": "JavaScript",
         "categoria": "JavaScript",
-        "data_modificacao": "2026-09-22",
+        "data_modificacao": "2026-09-21",
         "texto_breve": "Aprenda JavaScript do zero e domine a linguagem que move a web",
+        "plataforma": "Curso em Video"
+    },
+    {
+        "arquivo": "php.md",
+        "titulo": "PHP Moderno",
+        "categoria": "PHP",
+        "data_modificacao": "2026-09-22",
+        "texto_breve": "Aprenda PHP moderno com segurança, clareza e foco no que importa",
         "plataforma": "Curso em Video"
     },
     {
