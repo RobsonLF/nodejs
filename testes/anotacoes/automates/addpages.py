@@ -9,7 +9,7 @@ pasta_projeto = pasta_script.parent
 #Arquivos e pastas
 arquivo_json = pasta_projeto / "data" / "notes.json"
 pasta_pages = pasta_projeto / "pages"
-arquivo_template = pasta_projeto / "templetes" / "templateCategoria.html"
+arquivo_template = pasta_projeto / "templates" / "templateCategoria.html"
 
 #Ler JSON
 with open(arquivo_json, "r", encoding="utf-8") as arquivo:
@@ -30,10 +30,7 @@ for categoria in sorted(categorias):
         print(f"Arquivo já existente: {arquivo_categoria.name}")
         continue
     #Copiar template
-    shutil.copy2(
-        arquivo_template,
-        arquivo_categoria
-    )
+    shutil.copy2(arquivo_template,arquivo_categoria)
     print(f"Criado: {arquivo_categoria.name}")
 
 print("\nProcesso concluído!")
