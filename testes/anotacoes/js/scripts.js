@@ -50,9 +50,11 @@ async function carregarResumoCategorias(){
     document.getElementById("qtdbanco").textContent = categorias.banco.quantidade;
     document.getElementById("qtdjavascript").textContent = categorias.javascript.quantidade;
     document.getElementById("qtdhtmlcss").textContent = categorias.htmlcss.quantidade;
+    document.getElementById("qtdredes").textContent = categorias.htmlcss.quantidade;
     document.getElementById("bancodate").textContent = categorias.banco.data;
     document.getElementById("javascriptdate").textContent = categorias.javascript.data;
     document.getElementById("htmldate").textContent = categorias.htmlcss.data;
+    document.getElementById("redesdate").textContent = categorias.htmlcss.data;
 }
 //carregarArquivos();
 carregarResumoCategorias();
