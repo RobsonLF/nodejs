@@ -37,27 +37,40 @@
                     <button type="button" aria-label="Perfil"><i class="bi bi-person-circle"></i></button>
                 </div>
             </header>
-
             <section class="dashboard-content" aria-label="Resumo do dashboard">
                 <div class="metrics-grid">
-                    <article class="metric-card">
-                        <div class="metric-icon orange"><i class="bi bi-filetype-sql"></i></div>
-                        <div class="metric-copy"><span>Banco de Dados</span><strong>1</strong></div>
-                        <div class="metric-footer"><i class="bi bi-arrow-clockwise"></i> Atualizado</div>
-                    </article>
+                    <a class="metric-card-link" href="pages/templateCategoria.html">
+                        <article class="metric-card">
+                            <div class="metric-icon orange"><i class="bi bi-filetype-sql"></i></div>
+                            <div class="metric-copy"><span>Banco de Dados</span><strong id="qtdbanco">0</strong></div>
+                            <div class="metric-footer">
+                                <i class="bi bi-arrow-clockwise"></i>
+                                <span>Atualizado</span>
+                                <span class="metric-date" id="bancodate"></span>
+                            </div>
+                        </article>
+                    </a>
+
                     <article class="metric-card">
                         <div class="metric-icon green"><i class="bi bi-filetype-js"></i></div>
-                        <div class="metric-copy"><span>Back End</span><strong>2</strong></div>
-                        <div class="metric-footer"><i class="bi bi-arrow-clockwise"></i> Atualizado</div>
+                        <div class="metric-copy"><span>JavaScript</span><strong id="qtdjavascript">0</strong></div>
+                        <div class="metric-footer">
+                            <i class="bi bi-arrow-clockwise"></i>
+                            <span>Atualizado</span>
+                            <span class="metric-date" id="javascriptdate"></span>
+                         </div>
                     </article>
                     <article class="metric-card">
                         <div class="metric-icon red"><i class="bi bi-filetype-html"></i></div>
-                        <div class="metric-copy"><span>Front End</span><strong>1</strong></div>
-                        <div class="metric-footer"><i class="bi bi-arrow-clockwise"></i> Atualizado</div>
+                        <div class="metric-copy"><span>HTML/CSS</span><strong id="qtdhtmlcss">0</strong></div>
+                        <div class="metric-footer">
+                            <i class="bi bi-arrow-clockwise"></i>
+                            <span>Atualizado</span>
+                            <span class="metric-date" id="htmldate"></span>
+                         </div>
                     </article>
                 </div>
-
-
+                <!--<div id="conteudo"></div>-->
             </section>
         </main>
     </div>

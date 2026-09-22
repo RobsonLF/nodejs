@@ -1,6 +1,6 @@
 # JavaScript
 
-Categoria: Desenvolvimento
+Categoria: JavaScript
 
 Plataforma: Curso em Video
 

@@ -1,6 +1,6 @@
 # JavaScript - Luis Otávio Miranda
 
-Categoria: Desenvolvimento
+Categoria: JavaScript
 
 Plataforma: Udemy
 

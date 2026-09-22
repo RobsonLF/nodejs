@@ -1,6 +1,6 @@
 # HTML
 
-Categoria: Desenvolvimento
+Categoria: HTML
 
 Plataforma: Curso em Video
 

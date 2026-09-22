@@ -9,11 +9,29 @@
     --line: #d4d9db;
 }
 
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--ink); font-family: "DM Sans", sans-serif; }
-button, a { font: inherit; }
-.app-shell { display: flex; min-height: 100vh; }
-.sidebar { width: 254px; flex: 0 0 254px; background: var(--sidebar); color: #d8e8eb; padding: 27px 20px; }
+* {
+    box-sizing: border-box; 
+}
+body { 
+    margin: 0; 
+    background: var(--page); 
+    color: var(--ink); 
+    font-family: "DM Sans", sans-serif; 
+}
+button, a {
+     font: inherit; 
+}
+.app-shell { 
+    display: flex; 
+    min-height: 100vh; 
+}
+.sidebar { 
+    width: 254px; 
+    flex: 0 0 254px; 
+    background: var(--sidebar); 
+    color: #d8e8eb; 
+    padding: 27px 20px; 
+}
 .brand { color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 17px; text-align: center; }
 .sidebar-rule { height: 1px; margin: 26px -6px 30px; background: rgba(255,255,255,.28); }
 .sidebar-nav { display: grid; gap: 8px; }
@@ -30,12 +48,14 @@ button, a { font: inherit; }
 .menu-toggle { display: none; margin-right: 14px; }
 .dashboard-content { padding: 30px; }
 .metrics-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 29px; }
+.metric-card-link { color: inherit; text-decoration: none; }
 .metric-card { display: grid; grid-template-columns: 70px 1fr; min-height: 130px; padding: 19px 16px 0; background: var(--surface); border-radius: 6px; box-shadow: 0 2px 4px rgba(42,54,60,.08); }
 .metric-icon { align-self: start; font-size: 44px; line-height: 1; }
 .metric-icon.orange { color: #ff9419; }.metric-icon.green { color: #79aa49; }.metric-icon.red { color: #ff4a4a; }
 .metric-copy { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
 .metric-copy span { font-size: 15px; }.metric-copy strong { font-family: "Space Grotesk", sans-serif; font-size: 29px; font-weight: 500; }
 .metric-footer { grid-column: 1 / -1; display: flex; align-items: center; gap: 6px; height: 46px; margin-top: 3px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.metric-date { margin-left: auto; }
 .chart-card { margin-top: 20px; padding: 21px 21px 16px; background: var(--surface); border-radius: 6px; box-shadow: 0 2px 4px rgba(42,54,60,.06); }
 .chart-heading h2 { margin: 0; font-family: "Space Grotesk", sans-serif; font-size: 20px; font-weight: 500; }.chart-heading p { margin: 1px 0 31px; color: var(--muted); font-size: 14px; }
 .chart { display: flex; height: 275px; }.y-axis { display: flex; flex-direction: column; justify-content: space-between; width: 43px; padding: 2px 8px 27px 0; color: #8b9ba2; font-size: 12px; text-align: right; }
