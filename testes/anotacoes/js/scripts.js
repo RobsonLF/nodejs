@@ -31,6 +31,10 @@ async function carregarResumoCategorias(){
             categoriaResumo = resumo.javascript;
         } else if (categoria === "html" || categoria === "css") {
             categoriaResumo = resumo.htmlcss;
+        } else if (categoria === "redes") {
+            categoriaResumo = resumo.redes;
+        } else if (categoria === "php") {
+            categoriaResumo = resumo.php;
         }
 
         if (categoriaResumo) {
@@ -44,17 +48,21 @@ async function carregarResumoCategorias(){
     }, {
         banco: { quantidade: 0, data: "" },
         javascript: { quantidade: 0, data: "" },
-        htmlcss: { quantidade: 0, data: "" }
+        htmlcss: { quantidade: 0, data: "" },
+        redes: { quantidade: 0, data: "" },
+        php: { quantidade: 0, data: "" }
     });
 
     document.getElementById("qtdbanco").textContent = categorias.banco.quantidade;
     document.getElementById("qtdjavascript").textContent = categorias.javascript.quantidade;
     document.getElementById("qtdhtmlcss").textContent = categorias.htmlcss.quantidade;
-    document.getElementById("qtdredes").textContent = categorias.htmlcss.quantidade;
+    document.getElementById("qtdredes").textContent = categorias.redes.quantidade;
+    document.getElementById("qtdphp").textContent = categorias.php.quantidade;
     document.getElementById("bancodate").textContent = categorias.banco.data;
     document.getElementById("javascriptdate").textContent = categorias.javascript.data;
     document.getElementById("htmldate").textContent = categorias.htmlcss.data;
-    document.getElementById("redesdate").textContent = categorias.htmlcss.data;
+    document.getElementById("redesdate").textContent = categorias.redes.data;
+    document.getElementById("phpdate").textContent = categorias.php.data;
 }
 //carregarArquivos();
 carregarResumoCategorias();

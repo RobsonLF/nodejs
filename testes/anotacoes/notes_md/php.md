@@ -1,14 +1,12 @@
 # PHP Moderno
 
-Categoria: PHP
+Categoria: php
 
 Plataforma: Curso em Video
 
 Texto Breve: Aprenda PHP moderno com segurança, clareza e foco no que importa
 
-
 ## LIVROS
-
 
 1 - Documentação oficial de PHP
 2 - Aprendendo PHP - David Sklar (Ed. O'Reilly)
@@ -21,7 +19,6 @@ Nota: Acronimo recursivo
       JSON - JavaScript object notation
 
 ## CONFIGURAÇÃO AMBIENTE PHP
-
 
 1 - Os projetos tem que ser criados na pasta do xampp htdocs;
 2 - Ativar o autosave no vscode;
@@ -40,7 +37,6 @@ Nota: Acronimo recursivo
 4. <?=   ?> --> short tag PHP
 
 ## OUTROS COMANDOS
-
 
 // --> Comentários em php
 ctrl + ; --> comenta todo trecho selecionado do código.
@@ -66,7 +62,6 @@ ctrl + ; --> comenta todo trecho selecionado do código.
 7. Use snake_case para nomear constantes.
 
 ## TIPOS PRIMITIVOS
-
 
 Categorias de tipos primitivos:
 

@@ -30,10 +30,10 @@ button, a {
     flex: 0 0 254px; 
     background: var(--sidebar); 
     color: #d8e8eb; 
-    padding: 27px 20px; 
+    padding: 15px 20px; 
 }
 .brand { color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 17px; text-align: center; }
-.sidebar-rule { height: 1px; margin: 26px -6px 30px; background: rgba(255,255,255,.28); }
+.sidebar-rule { height: 1px; margin: 8px -6px 30px; background: rgba(255,255,255,.28); }
 .sidebar-nav { display: grid; gap: 8px; }
 .nav-item { position: relative; display: flex; align-items: center; gap: 18px; min-height: 52px; padding: 0 8px; color: #d3e6e9; font-size: 13px; font-weight: 700; text-decoration: none; }
 .nav-item i { width: 26px; color: #cfe4e8; font-size: 25px; text-align: center; }
