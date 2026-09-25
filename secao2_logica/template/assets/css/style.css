@@ -1,0 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    --bkg-color-body: rgba(245, 245, 220, 0.507);
+    --bkg-color-container: #aeb0b17a;
+    --bdr-color-focus: rgb(132, 230, 132);
+    --bdr-color-unselect: rgba(92, 91, 91, 0.459);
+
+}
+*{
+    box-sizing: border-box;
+    outline: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bkg-color-body);
+    font-family: "Inter", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+.container{
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: var(--bkg-color-container);
+    padding: 20px;
+}
+
+form input, form label, form button{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input{
+    font-size: 18px;
+    height: 32px;
+    padding: 0 20px;
+    border: 1px solid var(--bdr-color-unselect);
+    border-radius: 5px; 
+}
+form input:focus{
+    outline: 1px solid var(--bdr-color-focus);
+}
+
+form button{
+    border:none;
+    background: var(--bkg-color-body);
+    font-family: "Open sans";
+    font-size: 18px;
+    font-weight: 700;
+    height: 150xp;
+
+}
