@@ -65,3 +65,14 @@ form button:hover{
 form button:active{
     background-color: red;
 }
+
+.paragrafo-resultado-verde{
+    background: rgb(17, 173, 173);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.paragrafo-resultado-vermelho{
+    background: rgb(216, 126, 126);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
