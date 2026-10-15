@@ -2,11 +2,12 @@ const inputTarefa = document.querySelector('.input-tarefa');
 const btnTarefa = document.querySelector('.btn-tarefas');
 const tarefas = document.querySelector('.tarefas');
 
-
+//######################OK###########################
 function criaLi(){
     const li = document.createElement('li');
     return li;
 }
+//######################OK###########################
 inputTarefa.addEventListener('keypress',function(e){
     if (e.keyCode===13){
         if (!inputTarefa.value) return;
@@ -14,10 +15,13 @@ inputTarefa.addEventListener('keypress',function(e){
         limpaTarefa();
     }
 });
+
+//######################OK###########################
 function limpaTarefa(){
     inputTarefa.value = '';
     inputTarefa.focus();
 }
+//######################OK###########################
 function criaBotaoApagar(li){
     li.innerText += ' ';
     const botaoApagar = document.createElement('button');
@@ -26,6 +30,7 @@ function criaBotaoApagar(li){
     botaoApagar.setAttribute('title','Apagar essa tarefa');
     li.appendChild(botaoApagar);
 }
+//######################OK###########################
 function criaTarefa(textoInput){
     const li = criaLi();
     li.innerHTML = textoInput;
@@ -33,12 +38,13 @@ function criaTarefa(textoInput){
     criaBotaoApagar(li);
     salvarTarefas();
 }
+//######################OK###########################
 btnTarefa.addEventListener('click',function(){
     if (!inputTarefa.value) return;
     criaTarefa(inputTarefa.value);
     limpaTarefa();
 });
-
+//######################OK###########################
 document.addEventListener('click',function(e){
     const elemento = e.target;
     if (elemento.classList.contains('apagar')){
