@@ -1,3 +1,6 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "terminal.integrated.env.windows": {
+        "PATH": "D:\\_Robson\\RLDF\\Devs\\Projetos Git\\nodejs\\projetos\\ConexaoBD\\node;${env:PATH}"
+    }
 }
