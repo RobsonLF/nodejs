@@ -60,3 +60,10 @@
 * && --> AND --> E
 * | |    --> OR    --> OU
 * !     --> NOT  --> NÃO
+
+# Seção 3 - Funções Avançadas
+
+### Factory Functions
+
+* Método - Uma função dentro de objeto é um método.
+*
