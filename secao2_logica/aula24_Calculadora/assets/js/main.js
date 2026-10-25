@@ -4,6 +4,14 @@ function criaCalculadora(){
         
         inicia(){
             this.cliqueBotoes();
+            this.pressionaEnter();
+        },
+        pressionaEnter(){
+            this.display.addEventListener('keyup', function(e) {
+                if(e.keyCode===13){
+                    this.realizaConta();
+                }
+            }.bind(this));
         },
         clearDisplay(){
             this.display.value = '';
