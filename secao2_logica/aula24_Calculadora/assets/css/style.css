@@ -38,16 +38,18 @@ body{
     width: 400px;
 }
 .display{
-    font-size: 2.5em;
+    font-family: var(--font-Quaternary);
+    font-size: 2em;
     border:#66646463 solid 1px; 
     width: 100%;
     text-align: right;    
     border-radius: 5px;
 }
 .btn{
+    font-family: var(--font-Quaternary);
     width: 100%;
     height: 50px;
-    font-size: 1.3em;
+    font-size: 1.5em;
     border: none;
     background: var(--bdr-color-unselect);
     border-radius: 5px;
