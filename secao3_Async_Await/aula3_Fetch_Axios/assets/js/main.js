@@ -1,7 +1,10 @@
-fetch('pessoas.json')
+/*fetch('pessoas.json')
     .then(resposta => resposta.json())
     .then(json => carregaElementos(json));
-
+*/
+axios('pessoas.json')
+    .then(resposta => carregaElementos(resposta.data));
+    
 
 function carregaElementos(json){
     const table = document.createElement('table');
