@@ -1,0 +1,28 @@
+Para adicionar dados a uma API ou servidor que utiliza JSON usando o Axios, você deve enviar uma requisição do tipo POST (para criar um novo recurso) ou PUT / PATCH (para atualizar ou mesclar dados existentes).
+O Axios converte automaticamente os objetos JavaScript em JSON e define o cabeçalho Content-Type: application/json.
+
+Exemplo prático usando axios.post()
+
+javascript
+import axios from 'axios';
+
+// 1. Defina o objeto com os dados que você quer adicionar
+const novoDado = {
+  nome: 'Maria Silva',
+  email: 'maria@email.com',
+  idade: 28
+};
+
+// 2. Faça a requisição POST para a URL da API
+async function adicionarDados() {
+  try {
+    const resposta = await axios.post('https://sua-api.com', novoDado);
+    
+    // O Axios já retorna os dados da resposta em 'resposta.data'
+    console.log('Dados adicionados com sucesso:', resposta.data);
+  } catch (erro) {
+    console.error('Erro ao enviar dados:', erro);
+  }
+}
+
+adicionarDados();
