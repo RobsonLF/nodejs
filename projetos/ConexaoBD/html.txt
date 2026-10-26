@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro de usuários</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            color: #172033;
+            background: #f3f6fb;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        main {
+            width: min(760px, 100%);
+            margin: 0 auto;
+        }
+
+        h1 { margin: 0 0 8px; }
+        .intro { margin: 0 0 24px; color: #5c667a; }
+
+        .panel {
+            padding: 24px;
+            margin-bottom: 20px;
+            background: #fff;
+            border: 1px solid #e0e6ef;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgb(23 32 51 / 5%);
+        }
+
+        .fields {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        label { display: grid; gap: 7px; font-weight: 600; }
+
+        input {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #cbd3df;
+            border-radius: 7px;
+            font: inherit;
+        }
+
+        input:focus {
+            outline: 3px solid rgb(37 99 235 / 18%);
+            border-color: #2563eb;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: 0;
+            border-radius: 7px;
+            background: #2563eb;
+            color: white;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button.secondary { background: #e8edf5; color: #172033; }
+        button.danger { background: #b42318; }
+        button:disabled { cursor: not-allowed; opacity: .5; }
+        .table-wrap { overflow-x: auto; }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 12px 10px; border-bottom: 1px solid #e7ebf1; }
+        th { color: #5c667a; font-size: .9rem; }
+        td.actions-cell { white-space: nowrap; }
+        td.actions-cell button { padding: 7px 10px; margin-right: 5px; }
+        .status { min-height: 1.5em; margin: 14px 0 0; color: #344054; }
+        .status.error { color: #b42318; }
+        .empty { color: #667085; text-align: center; }
+
+        @media (max-width: 560px) {
+            body { padding: 24px 14px; }
+            .fields { grid-template-columns: 1fr; }
+            .panel { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Cadastro de usuários</h1>
+        <p class="intro">Insira, atualize ou exclua registros salvos no banco de dados.</p>
+
+        <section class="panel" aria-labelledby="form-title">
+            <h2 id="form-title">Novo usuário</h2>
+            <form id="user-form">
+                <div class="fields">
+                    <label for="nome">
+                        Nome
+                        <input id="nome" name="nome" maxlength="100" autocomplete="given-name" required>
+                    </label>
+                    <label for="sobrenome">
+                        Sobrenome
+                        <input id="sobrenome" name="sobrenome" maxlength="100" autocomplete="family-name" required>
+                    </label>
+                </div>
+                <div class="actions">
+                    <button id="save-button" type="submit">Inserir usuário</button>
+                    <button id="delete-button" class="danger" type="button" disabled>Excluir selecionado</button>
+                    <button id="cancel-button" class="secondary" type="button" hidden>Cancelar edição</button>
+                </div>
+            </form>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel" aria-labelledby="list-title">
+            <h2 id="list-title">Usuários cadastrados</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>ID</th><th>Nome</th><th>Sobrenome</th><th>Ações</th></tr>
+                    </thead>
+                    <tbody id="user-list"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const form = document.querySelector('#user-form');
+        const nameInput = document.querySelector('#nome');
+        const surnameInput = document.querySelector('#sobrenome');
+        const list = document.querySelector('#user-list');
+        const saveButton = document.querySelector('#save-button');
+        const deleteButton = document.querySelector('#delete-button');
+        const cancelButton = document.querySelector('#cancel-button');
+        const formTitle = document.querySelector('#form-title');
+        const statusMessage = document.querySelector('#status');
+        let selectedId = null;
+
+        function showStatus(message, isError = false) {
+            statusMessage.textContent = message;
+            statusMessage.classList.toggle('error', isError);
+        }
+
+        async function apiRequest(url, options = {}) {
+            const response = await fetch(url, {
+                ...options,
+                headers: { 'Content-Type': 'application/json', ...options.headers },
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.erro || 'Não foi possível concluir a operação.');
+            }
+            return data;
+        }
+
+        async function loadUsers() {
+            const users = await apiRequest('/api/usuarios');
+            list.replaceChildren();
+
+            if (users.length === 0) {
+                const row = document.createElement('tr');
+                const cell = document.createElement('td');
+                cell.colSpan = 4;
+                cell.className = 'empty';
+                cell.textContent = 'Nenhum usuário cadastrado.';
+                row.append(cell);
+                list.append(row);
+                return;
+            }
+
+            for (const user of users) {
+                const row = document.createElement('tr');
+                for (const value of [user.id, user.nome, user.sobrenome]) {
+                    const cell = document.createElement('td');
+                    cell.textContent = value;
+                    row.append(cell);
+                }
+
+                const actions = document.createElement('td');
+                actions.className = 'actions-cell';
+
+                const edit = document.createElement('button');
+                edit.type = 'button';
+                edit.className = 'secondary';
+                edit.textContent = 'Editar';
+                edit.addEventListener('click', () => beginEdit(user));
+
+                const remove = document.createElement('button');
+                remove.type = 'button';
+                remove.className = 'danger';
+                remove.textContent = 'Excluir';
+                remove.addEventListener('click', () => removeUser(user.id));
+
+                actions.append(edit, remove);
+                row.append(actions);
+                list.append(row);
+            }
+        }
+
+        function beginEdit(user) {
+            selectedId = user.id;
+            nameInput.value = user.nome;
+            surnameInput.value = user.sobrenome;
+            formTitle.textContent = `Editando usuário #${user.id}`;
+            saveButton.textContent = 'Salvar alterações';
+            deleteButton.disabled = false;
+            cancelButton.hidden = false;
+            nameInput.focus();
+            showStatus(`Usuário #${user.id} selecionado para edição.`);
+        }
+
+        function resetForm() {
+            selectedId = null;
+            form.reset();
+            formTitle.textContent = 'Novo usuário';
+            saveButton.textContent = 'Inserir usuário';
+            deleteButton.disabled = true;
+            cancelButton.hidden = true;
+        }
+
+        async function removeUser(id) {
+            if (!window.confirm(`Deseja realmente excluir o usuário #${id}?`)) return;
+
+            try {
+                await apiRequest(`/api/usuarios/${id}`, { method: 'DELETE' });
+                if (selectedId === id) resetForm();
+                await loadUsers();
+                showStatus(`Usuário #${id} excluído com sucesso.`);
+            } catch (error) {
+                showStatus(error.message, true);
+            }
+        }
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const user = { nome: nameInput.value, sobrenome: surnameInput.value };
+            const editing = selectedId !== null;
+
+            try {
+                await apiRequest(
+                    editing ? `/api/usuarios/${selectedId}` : '/api/usuarios',
+                    { method: editing ? 'PUT' : 'POST', body: JSON.stringify(user) },
+                );
+                resetForm();
+                await loadUsers();
+                showStatus(editing ? 'Usuário atualizado com sucesso.' : 'Usuário inserido com sucesso.');
+            } catch (error) {
+                showStatus(error.message, true);
+            }
+        });
+
+        deleteButton.addEventListener('click', () => {
+            if (selectedId !== null) removeUser(selectedId);
+        });
+
+        cancelButton.addEventListener('click', () => {
+            resetForm();
+            showStatus('Edição cancelada.');
+        });
+
+        loadUsers().catch((error) => showStatus(error.message, true));
+    </script>
+</body>
+</html>
