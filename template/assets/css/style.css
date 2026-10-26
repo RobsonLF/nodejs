@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root{
-    --bkg-color-body: rgba(245, 245, 220, 0.507);
-    --bkg-color-container: #aeb0b17a;
+    --bkg-color-body: rgba(37, 135, 165, 0.507);
+    --bkg-color-container: rgb(245, 245, 245);
     --bdr-color-focus: rgb(166, 212, 166);
     --bdr-color-unselect: rgba(92, 91, 91, 0.459);
     --bdr-color-select: rgba(8, 71, 50, 0.726);
