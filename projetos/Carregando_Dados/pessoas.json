@@ -938,5 +938,15 @@
     "idade": 20,
     "sexo": "F",
     "cpf": "174.282.537-05"
+  },
+  {
+    "nome": "Robson Ferreira",
+    "email": "robsonldfer@gmail.com",
+    "estado": "MG",
+    "empresa": "RHIMagnesita",
+    "sexo": "M",
+    "cpf": "055.064.246-39",
+    "salario": 6500,
+    "idade": 45
   }
 ]
