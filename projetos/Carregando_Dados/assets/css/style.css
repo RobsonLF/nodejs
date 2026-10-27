@@ -1,0 +1,42 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    --bkg-color-body: rgb(37, 135, 165);
+    --bkg-color-container: rgb(245, 245, 245);
+    --bdr-color-focus: rgb(166, 212, 166);
+    --bdr-color-unselect: rgba(92, 91, 91, 0.459);
+    --bdr-color-select: rgba(8, 71, 50, 0.726);
+
+}
+*{
+    box-sizing: border-box;
+    outline: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bkg-color-body);
+    font-family: "Inter", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+.container{
+    max-width: 75%;
+    margin: 10px auto;
+    background-color: var(--bkg-color-container);
+    padding: 20px;
+    
+}
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+th{
+    font-size: 16px;
+    text-align: center;
+}
+tr{
+    font-size: 14px;
+    text-align: center;
+}

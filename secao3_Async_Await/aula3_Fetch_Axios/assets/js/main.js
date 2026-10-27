@@ -1,3 +1,4 @@
+
 /*fetch('pessoas.json')
     .then(resposta => resposta.json())
     .then(json => carregaElementos(json));
