@@ -7,7 +7,7 @@
     "doc": "doc"
   },
   "scripts": {
-    "gera": "webpack -w"
+    "dev": "webpack -w"
   },
   "keywords": [],
   "author": "",

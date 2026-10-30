@@ -9,6 +9,7 @@ module.exports = {
     },
     module:{
         rules:[{
+            type:'javascript/auto',
             exclude:/node_modules/,
             test:/\.js$/,
             use:{
