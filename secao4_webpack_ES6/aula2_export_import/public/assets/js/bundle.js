@@ -10,19 +10,29 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   cpf: () => (/* binding */ cpf),
+/* harmony export */   "default": () => (/* binding */ soma),
 /* harmony export */   idade: () => (/* binding */ idade),
 /* harmony export */   nome: () => (/* binding */ nome),
-/* harmony export */   sobrenome: () => (/* binding */ sobrenome),
-/* harmony export */   soma: () => (/* binding */ soma)
+/* harmony export */   sobrenome: () => (/* binding */ sobrenome)
 /* harmony export */ });
 const nome = 'Robson';
 const sobrenome = 'Ferreira';
 const idade = 30;
+const cpf = '556.646.655-65';
 function soma(x, y) {
   return x + y;
 }
 ;
 
+/*
+export{
+    nome,
+    sobrenome,
+    idade,
+    soma,
+};
+*/
 
 /***/ }
 
@@ -89,10 +99,17 @@ let __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modulo1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modulo1 */ "./src/modulo1.js");
 
+console.log(_modulo1__WEBPACK_IMPORTED_MODULE_0__);
+
+/*
+import {nome as nome1, sobrenome, idade, soma} from './modulo1';
+
 const nome = 'Annelisa';
-console.log(nome, _modulo1__WEBPACK_IMPORTED_MODULE_0__.sobrenome, _modulo1__WEBPACK_IMPORTED_MODULE_0__.idade);
-console.log(_modulo1__WEBPACK_IMPORTED_MODULE_0__.nome);
-console.log((0,_modulo1__WEBPACK_IMPORTED_MODULE_0__.soma)(10, 5));
+
+console.log(nome, sobrenome, idade);
+console.log(nome1)
+console.log(soma(10,5));
+*/
 })();
 
 /******/ })()
