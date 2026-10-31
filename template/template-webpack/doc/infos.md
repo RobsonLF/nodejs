@@ -1,4 +1,3 @@
-
 # Configurações Webpack
 
 **Passo 1 -** Iniciar o npm
@@ -74,4 +73,12 @@ module.exports = {
 
 ```Shell
 npm install core-js regenerator-runtime
+```
+
+**Passo 6 -** Sempre que começar um projeto copiar a pasta, e no terminal:
+
+```Shell
+npm install
+
+npm run dev
 ```
