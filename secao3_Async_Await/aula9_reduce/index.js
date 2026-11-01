@@ -8,7 +8,6 @@ const pessoas = [
     { nome:'Wallace',idade:47 },
 ];
 
-
 const total = num.reduce(function(acumulador,valor,indice,array){
     return acumulador + valor;
 },0);
@@ -17,6 +16,12 @@ const pares = num.reduce(function(acumulador,valor){
     return acumulador;
 },[]);
 
-
-
 console.log(pares);
+console.log(total);
+
+const maisvelha = pessoas.reduce(function(acumulador,valor){
+    if (acumulador.idade > valor.idade) return acumulador;
+    return valor;
+});
+
+console.log(maisvelha);
