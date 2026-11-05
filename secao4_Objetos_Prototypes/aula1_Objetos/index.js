@@ -17,8 +17,7 @@ pessoa1.falarNome();
 
 for (let chave in pessoa1){
     console.log(pessoa1[chave]); //imprimindo as chaves do objeto pessoa1
-}
-//console.log(pessoa1)
+}//console.log(pessoa1)
 
 /*
 const pessoa = {
